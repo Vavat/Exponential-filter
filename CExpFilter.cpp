@@ -1,7 +1,7 @@
 #include "CExpFilter.h"
 #include <cmath>
 
-float ExpFilter::set(float new_value)
+float CExpFilter::set(float new_value)
 {
     if (mb_initialised)
     {
@@ -42,17 +42,17 @@ float ExpFilter::set(float new_value)
     return m_average;
 }
 
-float ExpFilter::get() const
+float CExpFilter::get() const
 {
     return m_average;
 }
 
-void ExpFilter::reset()
+void CExpFilter::reset()
 {
     mb_initialised = false;
 }
 
-void ExpFilter::setAlpha(float new_alpha)
+void CExpFilter::setAlpha(float new_alpha)
 {
     if (new_alpha > 0.0f && new_alpha <= 1.0f)
     {
@@ -60,7 +60,7 @@ void ExpFilter::setAlpha(float new_alpha)
     }
 }
 
-inline float ExpFilter::filter(float old_value, float new_value)
+inline float CExpFilter::filter(float old_value, float new_value)
 {
     float output = old_value * (1 - m_alpha);
     output += new_value * m_alpha;
