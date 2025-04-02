@@ -22,7 +22,7 @@
  * processing beyond smoothing some very sharp outliers.
  */
 
-class ExpFilter
+class CExpFilter
 {
 public:
     /**
